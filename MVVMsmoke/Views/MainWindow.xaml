@@ -60,7 +60,9 @@
 			<Button x:Name="btnLogin" 
                     Grid.Row="5" 
                     Grid.Column="1"
-					Content="Login"/>
+					Content="Login"
+                    Command="{Binding LoginUser}"
+                    CommandParameter="{Binding ElementName=tbPassword}"/>
 			<Button x:Name="btnSignUp" 
                     Grid.Row="5" 
                     Grid.Column="3"

@@ -8,7 +8,6 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
-using System.Linq;
 using MVVMsmoke.Model;
 using System.Windows;
 
@@ -27,6 +26,19 @@ namespace MVVMsmoke.ViewModel
             {
                 login = value;
                 OnPropertyChanged();
+            }
+        }
+
+        private string email;
+        public string Email
+        {
+            get 
+            { 
+                return email; 
+            }
+            set 
+            { 
+                email = value; OnPropertyChanged(); 
             }
         }
 
@@ -71,25 +83,26 @@ namespace MVVMsmoke.ViewModel
                             PasswordBox pb = (PasswordBox)obj;
                             string password = pb.Password;
                             User user = db.User.Where(u => u.Login == this.Login).FirstOrDefault();
-                            if(user == null && FieldCheker.CheckLogin(login) && FieldCheker.CheckPassword(pb.Password)/* && FieldCheker.CheckEmail()*/) //добавить емейл!!!
+                            if (user == null && FieldCheker.CheckLogin(login) && FieldCheker.CheckPassword(pb.Password)/* && FieldCheker.CheckEmail()*/) //добавить емейл!!!
                             {
-                                if(password == null)
+                                if (password != null)
                                 {
                                     int maxID = db.User.Max(u => u.ID);
-                                    User newUser = new User(maxID + 1, login, "mail@mail.com", password);
+                                    User newUser = new User(maxID + 1, login, email, password);
                                     db.User.Add(newUser);
                                     db.SaveChanges();
-                                    db.SaveChanges();
                                     MessageBox.Show("Пользователь добавлен");
+                                    CurrentUser.Id = newUser.ID;
+                                    CurrentUser.Login = newUser.Login;
+                                    CurrentUser.UserEmail = newUser.Email;
+                                    WindowsBuilder.ShowStoreWindow();
+                                    CloseWindow();
                                 }
                             }
                             else
                             {
                                 MessageBox.Show("Ошибка: Пользователь существует или ошибка заполнения");
-                            }
-
-                            WindowsBuilder.ShowStoreWindow();
-                            CloseWindow();
+                            }           
                         }
                     }));
             }

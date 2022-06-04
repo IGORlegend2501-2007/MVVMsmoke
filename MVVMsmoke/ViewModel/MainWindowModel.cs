@@ -6,6 +6,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace MVVMsmoke.ViewModel
 {
@@ -33,6 +35,35 @@ namespace MVVMsmoke.ViewModel
             if (PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            }
+        }
+        private BaseCommands loginUser;
+        public BaseCommands LoginUser
+        {
+            get
+            {
+                return loginUser ??
+                    (loginUser = new BaseCommands(obj =>
+                    {
+                        PasswordBox pb = (PasswordBox)obj;
+                        using(DbSettings db = new DbSettings())
+                        {
+                            var user = db.User.Where(u => u.Login == Login
+                                                    && u.Password == pb.Password).FirstOrDefault();
+                            if (user != null)
+                            {
+                                CurrentUser.Id = user.ID;
+                                CurrentUser.UserEmail = user.Email;
+                                CurrentUser.Login = user.Login;
+                                WindowsBuilder.ShowStoreWindow();
+                                CloseWindow();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Пользователь не найден");
+                            }
+                        }                    
+                    }));
             }
         }
 

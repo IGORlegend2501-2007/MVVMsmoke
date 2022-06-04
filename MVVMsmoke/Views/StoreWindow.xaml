@@ -7,6 +7,30 @@
         mc:Ignorable="d"
         Title="StoreWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="410*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="storeGrid" 
+              Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="500"/>
+            </Grid.ColumnDefinitions>
+            <DockPanel
+                Grid.Column="0"
+                Background="#FF2C2C2C">
+
+                <Grid x:Name="profileGrid">
+                    
+                </Grid>
+            </DockPanel>
+            <ScrollViewer Grid.Column="1"
+                          Background="#FF646464">
+                <Grid x:Name="gameField">
+                    
+                </Grid>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </Window>

@@ -58,7 +58,8 @@
                      Foreground="Black"
                      VerticalContentAlignment="Center" 
                      Cursor="Arrow"
-                     HorizontalContentAlignment="Center"/>
+                     HorizontalContentAlignment="Center"
+                     Text="{Binding Email}"/>
 			<PasswordBox x:Name="tbPassword"
 				     materialDesign:HintAssist.Hint="Пароль"
                      Grid.Row="5" 

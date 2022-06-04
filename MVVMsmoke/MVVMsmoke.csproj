@@ -72,6 +72,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\BaseCommands.cs" />
+    <Compile Include="CurrentUser.cs" />
     <Compile Include="CustomControls\WindowBorder.xaml.cs">
       <DependentUpon>WindowBorder.xaml</DependentUpon>
     </Compile>
