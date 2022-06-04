@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c75ba096-a291-4341-94c0-4ecb4e5a0ba7": {
+      "ProjectGuid": "c75ba096-a291-4341-94c0-4ecb4e5a0ba7",
+      "DisplayName": "MVVMsmoke",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
