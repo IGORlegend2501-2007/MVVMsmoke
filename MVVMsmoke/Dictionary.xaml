@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <BitmapImage x:Key="AuthWall" UriSource="pack://application:,,,/Images/wall.jpg" />
-	<BitmapImage x:Key="RegWall" UriSource="pack://application:,,,/Images/wallReg.jpg" />
+    <BitmapImage x:Key="RegWall" UriSource="pack://application:,,,/Images/wallReg.jpg" />
+    <BitmapImage x:Key="dg" UriSource="pack://application:,,,/Images/dg.ico" />
 </ResourceDictionary>

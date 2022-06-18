@@ -130,3 +130,8 @@ D:\MVVM\MVVMsmoke\obj\Debug\MVVMsmoke.Properties.Resources.resources
 D:\MVVM\MVVMsmoke\obj\Debug\MVVMsmoke.csproj.GenerateResource.cache
 D:\MVVM\MVVMsmoke\obj\Debug\MVVMsmoke.csproj.CoreCompileInputs.cache
 D:\MVVM\MVVMsmoke\obj\Debug\MVVMsmoke.csproj.CopyComplete
+D:\MVVM\MVVMsmoke\obj\Debug\CustomControls\StoreBorder.g.cs
+D:\MVVM\MVVMsmoke\obj\Debug\CustomControls\StoreBorder.baml
+D:\MVVM\MVVMsmoke\bin\Debug\Images\defolt.jpg
+D:\MVVM\MVVMsmoke\bin\Debug\Hardcodet.NotifyIcon.Wpf.dll
+D:\MVVM\MVVMsmoke\bin\Debug\Hardcodet.NotifyIcon.Wpf.xml

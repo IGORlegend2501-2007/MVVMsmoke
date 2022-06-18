@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVMsmoke.Views"
         mc:Ignorable="d"
-        Title="StoreWindow" Height="450" Width="800">
-    <Grid>
+        Title="StoreWindow" Height="450" Width="800" FontFamily="Segoe UI Black" FontWeight="Normal" WindowStyle="None" ResizeMode="NoResize">
+    <Grid x:Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="410*"/>
@@ -15,20 +15,72 @@
               Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="300"/>
-                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="500*"/>
             </Grid.ColumnDefinitions>
             <DockPanel
                 Grid.Column="0"
                 Background="#FF2C2C2C">
-
-                <Grid x:Name="profileGrid">
                     
+                <Grid x:Name="profileGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="90"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="90"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="240"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="iAvatar"
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           Source="{Binding Path=Avatar}"/>
+                    <Label x:Name="UserName"
+                           Grid.Column="1"
+                           Grid.Row="3"
+                           Foreground="Purple"
+                           HorizontalAlignment="Center"
+                           Content="{Binding UserName}"/>
+                    <ScrollViewer x:Name="sv_userGames"
+                                  Grid.Column="1"
+                                  Grid.Row="7">
+                        <TreeView x:Name="tv_userGames"
+                                  Foreground="Aqua">
+                            
+                        </TreeView>
+                    </ScrollViewer>
+                    <Button x:Name="QUIT_btn"
+                            Grid.Column="1"
+                            Grid.Row="9"
+                            Content="Quit"
+                            Command="{Binding LogOut}" Cursor="Hand"/>
+                    <Button x:Name="AVATARchose_btn"
+                            Grid.Column="2"
+                            Grid.Row="1"
+                            Content="..."
+                            Padding="0 0 0 0"
+                            Command="{Binding LoadAvatar}" Cursor="Hand"/>
                 </Grid>
             </DockPanel>
-            <ScrollViewer Grid.Column="1"
-                          Background="#FF646464">
-                <Grid x:Name="gameField">
-                    
+            <ScrollViewer Grid.Column="3"
+                          Background="#FF646464" Grid.RowSpan="12">
+                <Grid x:Name="GameField">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="215*"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="215*"/>
+                        <ColumnDefinition Width="20*"/>
+                    </Grid.ColumnDefinitions>
                 </Grid>
             </ScrollViewer>
         </Grid>

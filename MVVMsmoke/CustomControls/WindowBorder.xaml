@@ -20,7 +20,7 @@
                 FontSize="35"
                 Content="_"
                 Foreground="White" 
-                Click="btnHide_Click"/>
+                Click="btnHide_Click" Cursor="Hand"/>
         <Button x:Name="btnClose"
                 Grid.Column="2"
                 Height="30"
@@ -29,6 +29,6 @@
                 FontSize="35"
                 Content="X"
                 Foreground="White" 
-                Click="btnClose_Click"/>
+                Click="btnClose_Click" Cursor="Hand"/>
     </Grid>
 </UserControl>
